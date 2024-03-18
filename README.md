@@ -1,3 +1,3 @@
-## patient-portal
+## tachyon
 
-a clean way to onboard new customers in your hospital.
+better DX for doctors.
