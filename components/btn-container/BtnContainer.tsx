@@ -1,6 +1,5 @@
 import styles from "./BtnContainer.module.css";
 import { MouseEventHandler, ReactNode, useEffect, useState } from "react";
-import { questrialFont } from "@/utils";
 import classNames from "classnames";
 
 type BtnContainerProps = {
@@ -36,9 +35,7 @@ export function BtnContainer({
 
   return (
     <div className={classNames(styles["btn-container"], className)}>
-      <button className={questrialFont.className} onClick={onClick}>
-        {children}
-      </button>
+      <button onClick={onClick}>{children}</button>
       {isOnMobile || !showPressEnter || (
         <span>
           press <strong>Enter ↵</strong>
