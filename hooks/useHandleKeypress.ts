@@ -8,7 +8,7 @@ export function useHandleKeypress() {
 
   const { now } = questionNum;
   const { state } = useQuestions();
-  const { firstName, lastName, industry, role, goals, email } = state;
+  const { firstName, lastName, address, role, issues, email } = state;
 
   useEffect(() => {
     function handleKeypress(event: KeyboardEvent) {
@@ -27,25 +27,25 @@ export function useHandleKeypress() {
             lastName: "Please fill this in",
           }));
           return;
-        } else if (now + 1 === 4 && industry === "") {
+        } else if (now + 1 === 4 && address === "") {
           setErrorMsg((prevValue) => ({
             ...prevValue,
             industry: "Oops! Please make a selection",
           }));
           return;
-        } else if (now + 1 === 5 && role === "") {
+        } else if (now + 1 === 5 ) {
           setErrorMsg((prevValue) => ({
             ...prevValue,
             role: "Oops! Please make a selection",
           }));
           return;
-        } else if (now + 1 === 6 && goals.length === 0) {
+        } else if (now + 1 === 6 && issues.length === 0) {
           setErrorMsg((prevValue) => ({
             ...prevValue,
             goals: "Oops! Please make a selection",
           }));
           return;
-        } else if (now + 1 === 6 && goals.length === 1) {
+        } else if (now + 1 === 6 && issues.length === 1) {
           setErrorMsg((prevValue) => ({
             ...prevValue,
             goals: "Please select more choices",
@@ -87,5 +87,5 @@ export function useHandleKeypress() {
     };
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [firstName, industry, lastName, now, role, goals, email]);
+  }, [firstName, address, lastName, now, role, issues, email]);
 }

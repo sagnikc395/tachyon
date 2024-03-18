@@ -3,8 +3,8 @@ import classNames from "classnames";
 import {
   EmailInput,
   FirstNameInput,
-  GoalInput,
-  IndustryInput,
+  IssuesInput,
+  AddressInput,
   Intro,
   LastNameInput,
   RoleInput,
@@ -34,9 +34,9 @@ export function Question({
       {type === "intro" && <Intro />}
       {type === "firstName" && <FirstNameInput />}
       {type === "lastName" && <LastNameInput />}
-      {type === "industry" && <IndustryInput />}
+      {type === "address" && <AddressInput />}
       {type === "role" && <RoleInput />}
-      {type === "goal" && <GoalInput />}
+      {type === "issues" && <IssuesInput />}
       {type === "email" && <EmailInput />}
     </div>
   );
