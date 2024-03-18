@@ -10,9 +10,9 @@ export type QuestionProps = {
     | "intro"
     | "firstName"
     | "lastName"
-    | "industry"
+    | "address"
     | "role"
-    | "goal"
+    | "issues"
     | "email";
 };
 

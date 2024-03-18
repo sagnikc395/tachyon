@@ -11,14 +11,14 @@ import {
 import classNames from "classnames";
 import styles from "./Question.module.css";
 import Image from "next/image";
-import { REMOVE_GOAL, SET_GOALS } from "@/reducers";
+import { REMOVE_ISSUES, SET_ISSUES } from "@/reducers";
 
-export function GoalInput() {
+export function IssuesInput() {
   const { errorMsg: error, setErrorMsg, handleOkClick } = useSharedStates();
   const { state, dispatch } = useQuestions();
 
   const errorMsg = error.goals ?? "";
-  const { firstName, role, goals } = state;
+  const { firstName, role, issues } = state;
 
   const goalsOptions = useMemo(
     () =>
@@ -26,30 +26,30 @@ export function GoalInput() {
     [role]
   );
 
-  function handleDropdownOptionClick(_goal: string) {
+  function handleDropdownOptionClick(_issue: string) {
     setErrorMsg &&
       setErrorMsg((prevValue) => {
         delete prevValue.goals;
         return prevValue;
       });
 
-    if (goals.includes(_goal)) {
-      dispatch({ type: REMOVE_GOAL, payload: _goal });
+    if (issues.includes(_issue)) {
+      dispatch({ type: REMOVE_ISSUES, payload: _issue });
     } else {
-      dispatch({ type: SET_GOALS, payload: _goal });
+      dispatch({ type: SET_ISSUES, payload: _issue });
 
-      if (goals.length === 1) {
+      if (issues.length === 1) {
         setTimeout(() => handleOkClick(), 600);
       }
     }
   }
 
-  const chooseNum = 2 - goals.length;
+  const chooseNum = 2 - issues.length;
 
   return (
     <>
       <QuestionNumHeading questionNum={5}>
-        {firstName}, what&apos;s your professional goal for the next 12 months?
+        {firstName}, what issues are you facing currently ?
         *
       </QuestionNumHeading>
 
@@ -72,7 +72,7 @@ export function GoalInput() {
         <div>
           {Object.keys(goalsOptions).map((goalKey) => {
             const _goal = goalsOptions[goalKey];
-            const isSelected = goals.includes(_goal);
+            const isSelected = issues.includes(_goal);
 
             return (
               <DropdownSelectOption
@@ -81,7 +81,8 @@ export function GoalInput() {
                   styles["role-option"],
                   styles["goal-option"],
                   {
-                    [styles["not-selected"]]: !isSelected && goals.length === 2,
+                    [styles["not-selected"]]:
+                      !isSelected && issues.length === 2,
                   }
                 )}
                 onClick={() => handleDropdownOptionClick(_goal)}
@@ -103,7 +104,7 @@ export function GoalInput() {
 
       {errorMsg && <Error message={errorMsg} />}
 
-      {goals.length === 2 && errorMsg === "" && (
+      {issues.length === 2 && errorMsg === "" && (
         <BtnContainer
           className={classNames(styles["btn-container"], styles["ok"])}
           showPressEnter={false}

@@ -10,7 +10,7 @@ import styles from "./Question.module.css";
 import Image from "next/image";
 import { useSharedStates } from "@/contexts";
 
-export function IndustryInput() {
+export function AddressInput() {
   const {
     showIndustriesList,
     setShowIndustriesList,
@@ -23,7 +23,7 @@ export function IndustryInput() {
   return (
     <>
       <QuestionNumHeading questionNum={3}>
-        What industry is your company in? *
+        What is your address ?
       </QuestionNumHeading>
 
       <QuestionBoxPara>
