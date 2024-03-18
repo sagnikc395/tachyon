@@ -1,11 +1,11 @@
-import { FOUNDER_GOALS, NON_FOUNDER_GOALS } from "@/constants";
+import { DOCTOR_GOALS, PATIENT_GOALS } from "@/constants";
 
-export function getGoals(role: "FOUNDER" | "NON_FOUNDER") {
+export function getGoals(role: "DOCTOR" | "PATIENT") {
   switch (role) {
-    case "FOUNDER":
-      return FOUNDER_GOALS;
-    case "NON_FOUNDER":
+    case "DOCTOR":
+      return DOCTOR_GOALS;
+    case "PATIENT":
     default:
-      return NON_FOUNDER_GOALS;
+      return PATIENT_GOALS;
   }
 }

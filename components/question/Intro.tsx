@@ -6,17 +6,13 @@ export function Intro() {
 
   return (
     <>
-      <QuestionBoxHeading>
-        Up-skilling requires time commitment
-      </QuestionBoxHeading>
+      <QuestionBoxHeading>tachyon patient onboarding</QuestionBoxHeading>
       <QuestionBoxPara>
-        The GrowthX experience is designed by keeping in mind the working hours
-        founders &amp; full time operators typically work in.
+        onboard your patients faster and save tons of money
         <br />
         <br />
-        You will spend
-        <br />- 6 hours/week for the first 5 weeks
-        <br />- 15 hours/week for the last 3 weeks
+        You will only need spend
+        <br />- 10 mins for patient onboarding
       </QuestionBoxPara>
       <BtnContainer showPressEnter={true} onClick={handleOkClick}>
         I agree

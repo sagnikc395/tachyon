@@ -22,9 +22,7 @@ export function GoalInput() {
 
   const goalsOptions = useMemo(
     () =>
-      getGoals(
-        role.toLowerCase().includes("founder") ? "FOUNDER" : "NON_FOUNDER"
-      ),
+      getGoals(role.toLowerCase().includes("doctor") ? "DOCTOR" : "PATIENT"),
     [role]
   );
 
