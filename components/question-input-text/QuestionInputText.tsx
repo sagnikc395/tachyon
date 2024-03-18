@@ -1,4 +1,3 @@
-import { questrialFont } from "@/utils";
 import {
   ChangeEventHandler,
   ForwardedRef,
@@ -33,11 +32,7 @@ const QuestionInputText = forwardRef(
     return (
       <input
         ref={passedRef ?? inputTextRef}
-        className={classNames(
-          styles["question-input__text"],
-          questrialFont.className,
-          className
-        )}
+        className={classNames(styles["question-input__text"], className)}
         type={type ?? "text"}
         placeholder={placeholder ?? ""}
         value={value}

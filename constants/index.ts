@@ -1,3 +1,3 @@
 export * from "./GOALS";
-export * from "./ROLES";
+export * from "./DEPT";
 export * from "./TOTAL_QUESTIONS";

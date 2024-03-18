@@ -1,12 +1,12 @@
 import { ObjectType } from "@/types";
 
-export const FOUNDER_GOALS: ObjectType = {
+export const DOCTOR_GOALS: ObjectType = {
   A: "Structured approach to growth",
   B: "Build a growth team",
   C: "Connect with like-minded people",
 };
 
-export const NON_FOUNDER_GOALS: ObjectType = {
+export const PATIENT_GOALS: ObjectType = {
   A: "Get hired",
   B: "Get promoted",
   C: "Connect with like-minded people",
